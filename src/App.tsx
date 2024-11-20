@@ -5,6 +5,39 @@ import { useAppDispatch } from "./store";
 import { eventsActions } from "./store/events/slice";
 import { useSelector } from "react-redux";
 import { selectUpcomingEvents } from "./store/events/selectors";
+import DynamicForm from "./components/DynamicForm";
+
+
+//Functions to validate - adjust to the folder architecture later.
+const validateEmail = (value: string): string | undefined => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(value) ? undefined : "Invalid email address";
+};
+
+const validatePassword = (value: string): string | undefined => {
+  return value.length >= 6 ? undefined : "Password must be at least 6 characters";
+};
+
+//Fields for the form - adjust to the folder architecture later.
+const fieldsEvent = [
+  {
+    name: "email",
+    label: "Email Address",
+    type: "email",
+    validate: validateEmail,
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+    validate: validatePassword,
+  },
+  {
+    name: "username",
+    label: "Username",
+    type: "text",
+  },
+]
 
 function App() {
   const dispatch = useAppDispatch();
@@ -41,6 +74,11 @@ function App() {
           </li>
         ))}
       </ul>
+
+      <DynamicForm
+        fields={fieldsEvent}
+        onSubmit={(data) => console.log(data)}
+      />
     </main>
   );
 }
