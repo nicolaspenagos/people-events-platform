@@ -6,17 +6,8 @@ import { eventsActions } from "./store/events/slice";
 import { useSelector } from "react-redux";
 import { selectUpcomingEvents } from "./store/events/selectors";
 import DynamicForm from "./components/DynamicForm";
+import { createValidator } from "./utiles/createValidator";
 
-
-//Functions to validate - adjust to the folder architecture later.
-const validateEmail = (value: string): string | undefined => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(value) ? undefined : "Invalid email address";
-};
-
-const validatePassword = (value: string): string | undefined => {
-  return value.length >= 6 ? undefined : "Password must be at least 6 characters";
-};
 
 //Fields for the form - adjust to the folder architecture later.
 const fieldsEvent = [
@@ -24,18 +15,30 @@ const fieldsEvent = [
     name: "email",
     label: "Email Address",
     type: "email",
-    validate: validateEmail,
+    validate: createValidator({
+      required: "Email is required",
+      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    }),
   },
   {
     name: "password",
     label: "Password",
     type: "password",
-    validate: validatePassword,
+    validate: createValidator({
+      required: true,
+      minLength: 6,
+      maxLength: 20,
+    }),
   },
   {
     name: "username",
     label: "Username",
     type: "text",
+    validate: createValidator({
+      required: true,
+      minLength: 4,
+      maxLength: 20,
+    }),
   },
 ]
 

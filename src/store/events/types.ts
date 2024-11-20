@@ -25,3 +25,19 @@ export interface DynamicFormProps {
   // Action on form submission
   onSubmit: (data: Record<string, any>) => void; 
 }
+
+//Interface for validation rules
+export type ValidationRule = {
+  required?: boolean | string;
+  maxLength?: number;
+  minLength?: number;
+  max?: number;
+  min?: number;
+  pattern?: RegExp;
+  email?: boolean;
+  numeric?: boolean;
+  alpha?: boolean;
+  alphanumeric?: boolean;
+  matches?: (value: string) => boolean | string;
+  custom?: (value: string) => string | undefined;
+};
