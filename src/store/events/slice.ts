@@ -10,8 +10,8 @@ const eventsSlice = createSlice({
   name: "events",
   initialState,
   reducers: {
-    addEvent(state, { payload }: PayloadAction<Event>) {
-      state.upcoming.push(payload);
+    addEvents(state, { payload }: PayloadAction<Event[]>) {
+      state.upcoming.push(...payload);
     },
   },
 });
