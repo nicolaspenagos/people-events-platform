@@ -3,6 +3,8 @@ import { useForm, Controller } from "react-hook-form";
 import { DynamicFormProps } from "../store/events/types";
 import Label from "./Label";
 import Input from "./Input";
+import Select from "./Select";
+import {DateInput} from "./DateInput";
 import Button from "./Button";
 
 const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
@@ -25,28 +27,18 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
             render={({ field: controllerField }) => {
               if (field.type === "select") {
                 return (
-                  <select
+                  <Select
                     id={field.name}
                     value={controllerField.value || ""}
                     onChange={controllerField.onChange}
-                    className={`border p-2 rounded ${errors[field.name] ? "border-red-500" : "border-gray-300"
-                      }`}
-                  >
-                    <option value="" disabled>
-                      Select an option
-                    </option>
-                    {field.options?.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
+                    options={field.options || []}
+                    error={!!errors[field.name]}
+                  />
                 );
               } else if (field.type === "date") {
                 return (
-                  <Input
+                  <DateInput
                     id={field.name}
-                    type="date"
                     value={controllerField.value || ""}
                     onChange={controllerField.onChange}
                     error={!!errors[field.name]}
@@ -73,8 +65,6 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
           )}
         </div>
       ))}
-
-
 
       <Button type="submit">Submit</Button>
     </form>
