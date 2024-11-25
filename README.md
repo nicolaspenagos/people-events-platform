@@ -5,7 +5,7 @@
     - `nvm alias default 22`
 2. Clone the repo: `git clone https://github.com/nicolaspenagos/people-events-platform.git`
 3. Navigate to the directory that contains the project `cd people-events-platform`
-4. Ask the admins for the `.env` file and place it in the root dir of the proyect.
+4. Ask the admins for the `.env` file and place it in the root directory of the proyect.
 5. Install project dependencies: `npm i`
 6. Run the application: `npm run dev`
 
