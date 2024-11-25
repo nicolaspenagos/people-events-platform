@@ -7,8 +7,8 @@ export const EVENTS_ENDPOINT = "events";
 
 export const crudAPI = {
   putEvent: (event: Event) =>
-    put<Event>(`${EVENTS_ENDPOINT}/${event.id}.json`, event),
+    put<Event>(`${EVENTS_ENDPOINT}/${event.id}`, event),
   getEventById: (id: UUID) =>
-    get<EventDatabaseReponse>(`${EVENTS_ENDPOINT}/${id}.json`),
-  getEvents: () => get<EventDatabaseReponse>(`${EVENTS_ENDPOINT}.json`),
+    get<EventDatabaseReponse>(`${EVENTS_ENDPOINT}/${id}`),
+  getEvents: () => get<EventDatabaseReponse>(`${EVENTS_ENDPOINT}`),
 };
