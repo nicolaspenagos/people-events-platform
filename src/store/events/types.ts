@@ -13,13 +13,16 @@ export interface Event {
 export interface FieldConfig {
   name: string; 
   label: string;
-  type: string; 
+  type: string;
   // Custom validation function
-  validate?: (value: string) => string | undefined; 
+  validate?: (value: string) => string | undefined;
+  options?: { value: string; label: string }[];
 }
 
 //Interface for DynamicForm component props
 export interface DynamicFormProps {
+  // Form title
+  title: string;
   // Form fields configuration
   fields: FieldConfig[];
   // Action on form submission

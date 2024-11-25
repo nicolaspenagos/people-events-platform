@@ -7,7 +7,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset"; // Agregamos soporte para type
 }
 
-const StyledButton: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   onClick,
   children,
   className,
@@ -24,4 +24,4 @@ const StyledButton: React.FC<ButtonProps> = ({
   );
 };
 
-export default StyledButton;
+export default Button;

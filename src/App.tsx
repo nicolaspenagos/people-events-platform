@@ -7,40 +7,57 @@ import { useSelector } from "react-redux";
 import { selectUpcomingEvents } from "./store/events/selectors";
 import DynamicForm from "./components/DynamicForm";
 import { createValidator } from "./utiles/createValidator";
+import Button from "./components/Button";
 
 
 //Fields for the form - adjust to the folder architecture later.
 const fieldsEvent = [
   {
-    name: "email",
-    label: "Email Address",
-    type: "email",
-    validate: createValidator({
-      required: "Email is required",
-      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    }),
-  },
-  {
-    name: "password",
-    label: "Password",
-    type: "password",
-    validate: createValidator({
-      required: true,
-      minLength: 6,
-      maxLength: 20,
-    }),
-  },
-  {
-    name: "username",
-    label: "Username",
+    name: "activityName",
+    label: "Activity Name",
     type: "text",
     validate: createValidator({
-      required: true,
-      minLength: 4,
-      maxLength: 20,
+      required: "Activity name is required",
+      minLength: 3,
+      maxLength: 50,
     }),
   },
-]
+  {
+    name: "date",
+    label: "Date",
+    type: "date",
+    validate: createValidator({
+      required: "Date is required",
+    }),
+  },
+  {
+    name: "city",
+    label: "City",
+    type: "select",
+    options: [
+      { value: "cali", label: "Cali" },
+      { value: "medellin", label: "Medellin" },
+      { value: "bogota", label: "Bogota" },
+    ],
+    validate: createValidator({
+      required: "City is required",
+    }),
+  },
+  {
+    name: "site",
+    label: "Site",
+    type: "select",
+    options: [
+      { value: "site_a", label: "Site A" },
+      { value: "site_b", label: "Site B" },
+      { value: "site_c", label: "Site C" },
+    ],
+    validate: createValidator({
+      required: "Site is required",
+    }),
+  },
+];
+
 
 function App() {
   const dispatch = useAppDispatch();
@@ -61,12 +78,12 @@ function App() {
         <h1 className="text-green-500 text-4xl font-bold">
           People Events Platform
         </h1>
-        <button
-          className="bg-green-500 p-2 rounded text-slate-800 font-bold"
+        <Button
+          className={"bg-green-500 p-2 rounded text-slate-800 font-bold"}
           onClick={addEvent}
         >
           Add Event
-        </button>
+        </Button>
       </div>
       <ul>
         {upcomingEvents.map((event) => (
@@ -79,6 +96,7 @@ function App() {
       </ul>
 
       <DynamicForm
+        title="Create new event"
         fields={fieldsEvent}
         onSubmit={(data) => console.log(data)}
       />
