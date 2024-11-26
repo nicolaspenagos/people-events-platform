@@ -9,8 +9,7 @@ import DynamicForm from "./components/DynamicForm";
 import { createValidator } from "./utiles/createValidator";
 import Button from "./components/Button";
 
-
-//Fields for the form - adjust to the folder architecture later.
+// Fields for the form 
 const fieldsEvent = [
   {
     name: "activityName",
@@ -58,11 +57,11 @@ const fieldsEvent = [
   },
 ];
 
-
 function App() {
   const dispatch = useAppDispatch();
   const upcomingEvents = useSelector(selectUpcomingEvents);
 
+  // Function to add event
   const addEvent = () => {
     const newEvent: Event = {
       name: "Dummy Event",
@@ -78,16 +77,18 @@ function App() {
         <h1 className="text-green-500 text-4xl font-bold">
           People Events Platform
         </h1>
+        {/* Button component with styles */}
         <Button
-          className={"bg-green-500 p-2 rounded text-slate-800 font-bold"}
           onClick={addEvent}
         >
           Add Event
         </Button>
       </div>
+
+      {/* Event list */}
       <ul>
         {upcomingEvents.map((event) => (
-          <li className="my-3 bg-green-300 p-4 rounded-lg">
+          <li key={event.timestamp} className="my-3 bg-green-300 p-4 rounded-lg">
             <h2 className="font-bold">{event.name}</h2>
             <p>Location: {event.location}</p>
             <p>Timestamp: {event.timestamp}</p>
@@ -95,6 +96,7 @@ function App() {
         ))}
       </ul>
 
+      {/* Dynamic form */}
       <DynamicForm
         title="Create new event"
         fields={fieldsEvent}

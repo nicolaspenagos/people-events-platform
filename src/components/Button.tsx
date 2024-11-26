@@ -1,17 +1,17 @@
 import React from "react";
 
 interface ButtonProps {
-  onClick?: () => void; // onClick es opcional porque no siempre será necesario en botones tipo 'submit'
+  onClick?: () => void;
   children: React.ReactNode;
   className?: string;
-  type?: "button" | "submit" | "reset"; // Agregamos soporte para type
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
   onClick,
   children,
   className,
-  type = "button", // Valor predeterminado
+  type = "button",
 }) => {
   return (
     <button

@@ -14,7 +14,9 @@ const Select: React.FC<SelectProps> = ({ id, value, onChange, options, error }) 
       id={id}
       value={value}
       onChange={onChange}
-      className={`border p-2 rounded ${error ? "border-red-500" : "border-gray-300"}`}
+      className={`p-2 border-2 ${
+        error ? "border-red-500" : "border-gray-300"
+      } rounded-full focus:ring-2 focus:ring-[#96F887] focus:border-[#96F887]`}
     >
       <option value="" disabled>
         Select an option
