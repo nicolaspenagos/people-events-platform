@@ -1,6 +1,5 @@
 import { ValidationRule } from "./NewEventTypes";
 
-//Functions to validate - adjust to the folder architecture later.
 export const createValidator = (rules: ValidationRule) => {
     return (value: string): string | undefined => {
       // Required validation

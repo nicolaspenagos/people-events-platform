@@ -1,14 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import DynamicForm from "../../components/DynamicForm";
 import useAddEvent from "../../hooks/useAddEvent";
 import { Event } from "../../store/events/types"; 
 import fieldsEvent from "./fieldsEvent"; 
 
 const NewEventForm = () => {
+  const navigate = useNavigate(); // Hook for navigation
   const { addEvent } = useAddEvent();
 
   const handleFormSubmit = (formData: Record<string, any>) => {
-    // Asegúrate de mapear y transformar `formData` en el formato adecuado de `Event`
+    // Make sure to map and transform formData into the appropriate 'Event' format
     const newEvent: Event = {
       id: crypto.randomUUID(),
       activityName: formData.activityName,
@@ -31,11 +33,13 @@ const NewEventForm = () => {
     };
 
     addEvent(newEvent);
+
+    // Redirect to Home after submitting the form
+    navigate("/"); 
   };
 
   return (
     <DynamicForm
-      title="Create new event"
       fields={fieldsEvent}
       onSubmit={handleFormSubmit}
     />

@@ -1,12 +1,7 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { DynamicFormProps } from "../views/NewEvent/NewEventTypes";
-import Label from "../blocks/Label";
-import Input from "../blocks/Input";
-import Select from "../blocks/Select";
-import { DateInput } from "../blocks/DateInput";
-import Button from "../blocks/Button";
-import FormLayout from "../blocks/FormLayout"; 
+import { Label, Input, Select, DateInput, Button, FormLayout } from "../blocks";
 
 const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
   const {

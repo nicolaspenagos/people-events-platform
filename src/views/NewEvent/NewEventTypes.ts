@@ -10,8 +10,6 @@ export interface FieldConfig {
 
 //Interface for DynamicForm component props
 export interface DynamicFormProps {
-    // Form title
-    title: string;
     // Form fields configuration
     fields: FieldConfig[];
     // Action on form submission

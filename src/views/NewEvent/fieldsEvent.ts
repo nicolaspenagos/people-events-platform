@@ -1,5 +1,5 @@
-import { FieldConfig } from "./NewEventTypes"; // Asegúrate de que la ruta sea la correcta
-import { createValidator } from "./createValidator"; // Asegúrate de que la ruta sea la correcta
+import { FieldConfig } from "./NewEventTypes"; 
+import { createValidator } from "./createValidator"; 
 
 const fieldsEvent: FieldConfig[] = [
   {
@@ -8,7 +8,7 @@ const fieldsEvent: FieldConfig[] = [
     type: "text",
     validate: createValidator({
       required: "Activity name is required",
-      maxLength: 100, // Varchar 100
+      maxLength: 100, 
     }),
   },
   {
