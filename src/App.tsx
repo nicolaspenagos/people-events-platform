@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 import { selectUpcomingEvents } from "./store/events/selectors";
 import { crudAPI } from "./services/crud-api";
 import { extractJsonValues } from "./services/utils";
+import  DynamicForm  from "./components/DynamicForm";
+import  Button from "./blocks/Button";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -65,7 +67,7 @@ function App() {
       {/* Dynamic form */}
       <DynamicForm
         title="Create new event"
-        fields={fieldsEvent}
+        fields={[]}
         onSubmit={(data) => console.log(data)}
       />
     </main>

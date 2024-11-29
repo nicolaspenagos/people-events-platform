@@ -1,4 +1,4 @@
-import { ValidationRule } from "../store/events/types";
+import { ValidationRule } from "./NewEventTypes";
 
 //Functions to validate - adjust to the folder architecture later.
 export const createValidator = (rules: ValidationRule) => {
