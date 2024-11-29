@@ -1,14 +1,13 @@
 import React from "react";
-import DynamicForm from "../../components/DynamicForm";
-import fieldsEvent from "./fieldsEvent"; // Asegúrate de que la ruta sea correcta
+import NewEventForm from  "./NewEventForm";
 
-export default function NewEvent() {
-    return (
-        <DynamicForm
-            title="New Event"
-            fields={fieldsEvent}
-            onSubmit={(data) => console.log(data)}
-        />
-    );
-}
+const NewEvent = () => {
+  return (
+    <div className="p-4">
+      <h2 className="text-2xl font-bold">Create New Event</h2>
+      <NewEventForm />
+    </div>
+  );
+};
 
+export default NewEvent;

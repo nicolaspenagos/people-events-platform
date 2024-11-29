@@ -6,9 +6,23 @@ export interface EventsState {
 }
 
 export interface Event {
-  id: UUID;
-  name: string;
-  timestamp: string;
-  location: string;
+  id: UUID; 
+  activityName: string; 
+  date: string; 
+  city: string; 
+  mode: string; 
+  site: string; 
+  status: string; 
+  type: string; 
+  area: string; 
+  ownerTCBP?: string; 
+  ownerPJ?: string;
+  ownerSST?: string; 
+  beKindAssociate: string; 
+  globersInvited: number; 
+  globersAttended?: number; 
+  satisfaction?: number; 
+  costCOP?: number; 
+  costUSD?: number; 
 }
 
