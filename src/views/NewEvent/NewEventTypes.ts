@@ -9,11 +9,13 @@ export interface FieldConfig {
 }
 
 //Interface for DynamicForm component props
-export interface DynamicFormProps {
-    // Form fields configuration
-    fields: FieldConfig[];
-    // Action on form submission
-    onSubmit: (data: Record<string, any>) => void;
+ export interface DynamicFormProps {
+  fields: FieldConfig[];
+  onSubmit: (data: any) => void;
+  gridConfig?: {
+    columns: number; // Número de columnas en el grid
+    sections?: Array<{ title: string; range: [number, number] }>; // Rango de campos por sección
+  };
 }
 
 //Interface for validation rules
