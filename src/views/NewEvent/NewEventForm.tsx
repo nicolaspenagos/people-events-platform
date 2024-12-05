@@ -44,6 +44,7 @@ const NewEventForm = () => {
       onSubmit={handleFormSubmit}
       sections={sectionsEvent}
     />
+
   );
 };
 
