@@ -9,9 +9,9 @@ const NewEvent = () => {
       <h2 className="text-2xl font-bold">Create New Event</h2>
       <NewEventForm />
 
-      <Button>
-        <Link to="/">Home</Link>
-      </Button>
+      
+        <Link to="/"><Button>Home</Button></Link>
+      
     </div>
   );
 };
