@@ -3,25 +3,8 @@ import { useNavigate } from "react-router-dom";
 import DynamicForm from "../../components/DynamicForm";
 import useAddEvent from "../../hooks/useAddEvent";
 import { Event } from "../../store/events/types";
-import fieldsEvent from "./fieldsEvent";
+import sectionsEvent  from "./sectionsEvent";
 
-const sectionsEvent = [
-  {
-    title: "Event Details",
-    columns: 2,
-    fields: fieldsEvent.slice(0, 4), // Ajusta según los campos deseados.
-  },
-  {
-    title: "Location & Status",
-    columns: 1,
-    fields: fieldsEvent.slice(4, 8),
-  },
-  {
-    title: "Other Details",
-    columns: 2,
-    fields: fieldsEvent.slice(8), // Resto de los campos.
-  },
-];
 
 const NewEventForm = () => {
   const navigate = useNavigate();

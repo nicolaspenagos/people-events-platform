@@ -36,19 +36,6 @@ const fieldsEvent: FieldConfig[] = [
     }),
   },
   {
-    name: "mode",
-    label: "Mode",
-    type: "select",
-    options: [
-      { value: "remote", label: "Remote" },
-      { value: "in_person", label: "In Person" },
-      { value: "mixed", label: "Mixed" },
-    ],
-    validate: createValidator({
-      required: "Mode is required",
-    }),
-  },
-  {
     name: "site",
     label: "Site",
     type: "select",
@@ -68,6 +55,19 @@ const fieldsEvent: FieldConfig[] = [
     }),
   },
   {
+    name: "mode",
+    label: "Mode",
+    type: "select",
+    options: [
+      { value: "remote", label: "Remote" },
+      { value: "in_person", label: "In Person" },
+      { value: "mixed", label: "Mixed" },
+    ],
+    validate: createValidator({
+      required: "Mode is required",
+    }),
+  },
+  {
     name: "status",
     label: "Status",
     type: "select",
@@ -79,26 +79,6 @@ const fieldsEvent: FieldConfig[] = [
     ],
     validate: createValidator({
       required: "Status is required",
-    }),
-  },
-  {
-    name: "type",
-    label: "Type",
-    type: "select",
-    options: [
-      { value: "back_to_hubs", label: "Back to the Hubs" },
-      { value: "global_event", label: "Global Event" },
-      { value: "people_connect", label: "People Connect" },
-      { value: "all_hands", label: "All Hands" },
-      { value: "dei", label: "DEI" },
-      { value: "bkty", label: "BKTY" },
-      { value: "benefits", label: "Benefits" },
-      { value: "engagement", label: "Engagement" },
-      { value: "leadership_connect", label: "Leadership Connect" },
-      { value: "special_dates", label: "Special Dates" },
-    ],
-    validate: createValidator({
-      required: "Type is required",
     }),
   },
   {
@@ -116,6 +96,25 @@ const fieldsEvent: FieldConfig[] = [
     ],
     validate: createValidator({
       required: "Area is required",
+    }),
+  },{
+    name: "type",
+    label: "Type",
+    type: "select",
+    options: [
+      { value: "back_to_hubs", label: "Back to the Hubs" },
+      { value: "global_event", label: "Global Event" },
+      { value: "people_connect", label: "People Connect" },
+      { value: "all_hands", label: "All Hands" },
+      { value: "dei", label: "DEI" },
+      { value: "bkty", label: "BKTY" },
+      { value: "benefits", label: "Benefits" },
+      { value: "engagement", label: "Engagement" },
+      { value: "leadership_connect", label: "Leadership Connect" },
+      { value: "special_dates", label: "Special Dates" },
+    ],
+    validate: createValidator({
+      required: "Type is required",
     }),
   },
   {
