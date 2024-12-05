@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Label } from "../blocks";
 
 function Sidebar() {
     return (
@@ -26,16 +25,16 @@ function Sidebar() {
                 Home
             </Link>
             <Link
-                to="/"
+                to="/new-event"
                 className="px-4 py-2 hover:bg-white hover:text-green-800 transition-all rounded-r-full font-bold"
             >
                 Add Event
             </Link>
             <Link
-                to="/"
+                to="/all-events"
                 className="px-4 py-2 hover:bg-white hover:text-green-800 transition-all rounded-r-full font-bold"
             >
-                Manage Event
+                All Events
             </Link>
             <Link
                 to="/"

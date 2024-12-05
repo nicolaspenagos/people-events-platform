@@ -122,7 +122,6 @@ const fieldsEvent: FieldConfig[] = [
     label: "Owner TCBP",
     type: "email",
     validate: createValidator({
-      email: true,
       required: false, // Can be null
     }),
   },
@@ -131,7 +130,6 @@ const fieldsEvent: FieldConfig[] = [
     label: "Owner PJ",
     type: "email",
     validate: createValidator({
-      email: true,
       required: false, // Can be null
     }),
   },
@@ -140,7 +138,6 @@ const fieldsEvent: FieldConfig[] = [
     label: "Owner SST",
     type: "email",
     validate: createValidator({
-      email: true,
       required: false, // Can be null
     }),
   },
