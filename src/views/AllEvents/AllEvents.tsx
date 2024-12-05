@@ -4,7 +4,7 @@ import { selectUpcomingEvents } from "../../store/events/selectors";
 import { Link } from "react-router-dom";
 import Button from "../../blocks/Button";
 import useLoadEvents from "../../hooks/useLoadEvents";
-import useDownloadEventsJson from "../../hooks/useDownloadEventsJson";  // Import the hook for downloading
+import useDownloadEventsJson from "../../hooks/useDownloadEventsJson";
 import EventCard from "../../components/EventCard";
 import Sidebar from "../../components/Sidebar";
 
