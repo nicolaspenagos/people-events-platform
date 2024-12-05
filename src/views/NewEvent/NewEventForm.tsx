@@ -2,11 +2,29 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import DynamicForm from "../../components/DynamicForm";
 import useAddEvent from "../../hooks/useAddEvent";
-import { Event } from "../../store/events/types"; 
-import fieldsEvent from "./fieldsEvent"; 
+import { Event } from "../../store/events/types";
+import fieldsEvent from "./fieldsEvent";
+
+const sectionsEvent = [
+  {
+    title: "Event Details",
+    columns: 2,
+    fields: fieldsEvent.slice(0, 4), // Ajusta según los campos deseados.
+  },
+  {
+    title: "Location & Status",
+    columns: 1,
+    fields: fieldsEvent.slice(4, 8),
+  },
+  {
+    title: "Other Details",
+    columns: 2,
+    fields: fieldsEvent.slice(8), // Resto de los campos.
+  },
+];
 
 const NewEventForm = () => {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
   const { addEvent } = useAddEvent();
 
   const handleFormSubmit = (formData: Record<string, any>) => {
@@ -40,8 +58,8 @@ const NewEventForm = () => {
 
   return (
     <DynamicForm
-      fields={fieldsEvent}
       onSubmit={handleFormSubmit}
+      sections={sectionsEvent}
     />
   );
 };
