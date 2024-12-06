@@ -6,7 +6,7 @@ import Button from "../../blocks/Button";
 import useLoadEvents from "../../hooks/useLoadEvents";
 import useDownloadEventsJson from "../../hooks/useDownloadEventsJson";
 import EventCard from "../../components/EventCard";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 function AllEvents() {
   const upcomingEvents = useSelector(selectUpcomingEvents);

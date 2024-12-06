@@ -3,8 +3,8 @@ import React from "react";
 interface FormLayoutProps {
   children: React.ReactNode;
   className?: string;
-  columns?: number; // Número de columnas dinámico
-  rows?: number;    // Opcional: Número de filas dinámico
+  columns?: number;
+  rows?: number;
 }
 
 const FormLayout: React.FC<FormLayoutProps> = ({ children, className, columns = 2, rows }) => {
@@ -15,7 +15,7 @@ const FormLayout: React.FC<FormLayoutProps> = ({ children, className, columns = 
 
   return (
     <div
-      className={`grid gap-4 bg-gray-200 p-6 rounded-lg shadow-md ${className || ""}`}
+      className={`grid gap-4 p-6 ${className || ""}`}
       style={gridStyles}
     >
       {children}

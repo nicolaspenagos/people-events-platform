@@ -32,8 +32,9 @@ export type ValidationRule = {
 };
 
 export type Section = {
-    title?: string; // Título opcional de la sección.
-    columns: number; // Número de columnas en la sección.\n     rows?: number; // (Opcional) número de filas si deseas una configuración más controlada.
-    fields: FieldConfig[]; // Lista de campos en esta sección.
+    title?: string; 
+    columns: number; 
+    fields: FieldConfig[]; 
+    background?: boolean;
   };
 

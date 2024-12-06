@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "../../blocks/Button";
 import useLoadEvents from "../../hooks/useLoadEvents";
 import EventCard from "../../components/EventCard";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 function Home() {
   const upcomingEvents = useSelector(selectUpcomingEvents);
