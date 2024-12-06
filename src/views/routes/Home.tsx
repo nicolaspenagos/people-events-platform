@@ -24,7 +24,7 @@ function Home() {
             <Button>Add Event</Button>
           </Link>
         </div>
-        <ul className="w-full">
+        <ul className="w-full grid grid-cols-1 gap-6">
           {upcomingEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
