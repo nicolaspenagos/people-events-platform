@@ -2,11 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import DynamicForm from "../../components/DynamicForm";
 import useAddEvent from "../../hooks/useAddEvent";
-import { Event } from "../../store/events/types"; 
-import fieldsEvent from "./fieldsEvent"; 
+import { Event } from "../../store/events/types";
+import sectionsEvent  from "./sectionsEvent";
+
 
 const NewEventForm = () => {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
   const { addEvent } = useAddEvent();
 
   const handleFormSubmit = (formData: Record<string, any>) => {
@@ -40,9 +41,10 @@ const NewEventForm = () => {
 
   return (
     <DynamicForm
-      fields={fieldsEvent}
       onSubmit={handleFormSubmit}
+      sections={sectionsEvent}
     />
+
   );
 };
 

@@ -4,13 +4,17 @@ import { selectUpcomingEvents } from "../../store/events/selectors";
 import { Link } from "react-router-dom";
 import Button from "../../blocks/Button";
 import useLoadEvents from "../../hooks/useLoadEvents";
+import useDownloadEventsJson from "../../hooks/useDownloadEventsJson";
 import EventCard from "../../components/EventCard";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-function Home() {
+function AllEvents() {
   const upcomingEvents = useSelector(selectUpcomingEvents);
 
-  useLoadEvents();
+  useLoadEvents();  // Keep loading the events
+
+  // Use the download hook, passing the events as parameter
+  const handleDownload = useDownloadEventsJson(upcomingEvents);
 
   return (
     <div className="flex h-full">
@@ -23,6 +27,7 @@ function Home() {
           <Link to="/new-event">
             <Button>Add Event</Button>
           </Link>
+          <Button onClick={handleDownload}>Download Events</Button>
         </div>
         <ul className="w-full">
           {upcomingEvents.map((event) => (
@@ -34,4 +39,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AllEvents;

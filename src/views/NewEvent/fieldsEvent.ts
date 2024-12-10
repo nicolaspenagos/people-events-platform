@@ -36,19 +36,6 @@ const fieldsEvent: FieldConfig[] = [
     }),
   },
   {
-    name: "mode",
-    label: "Mode",
-    type: "select",
-    options: [
-      { value: "remote", label: "Remote" },
-      { value: "in_person", label: "In Person" },
-      { value: "mixed", label: "Mixed" },
-    ],
-    validate: createValidator({
-      required: "Mode is required",
-    }),
-  },
-  {
     name: "site",
     label: "Site",
     type: "select",
@@ -68,6 +55,19 @@ const fieldsEvent: FieldConfig[] = [
     }),
   },
   {
+    name: "mode",
+    label: "Mode",
+    type: "select",
+    options: [
+      { value: "remote", label: "Remote" },
+      { value: "in_person", label: "In Person" },
+      { value: "mixed", label: "Mixed" },
+    ],
+    validate: createValidator({
+      required: "Mode is required",
+    }),
+  },
+  {
     name: "status",
     label: "Status",
     type: "select",
@@ -82,6 +82,22 @@ const fieldsEvent: FieldConfig[] = [
     }),
   },
   {
+    name: "area",
+    label: "Area",
+    type: "select",
+    options: [
+      { value: "pj", label: "PJ" },
+      { value: "sst", label: "SST" },
+      { value: "tcbp", label: "TCBP" },
+      { value: "tcbp_pj", label: "TCBP-PJ" },
+      { value: "tcbp_sst", label: "TCBP-SST" },
+      { value: "pj_sst", label: "PJ-SST" },
+      { value: "tcbp_pj_sst", label: "TCBP-PJ-SST" },
+    ],
+    validate: createValidator({
+      required: "Area is required",
+    }),
+  },{
     name: "type",
     label: "Type",
     type: "select",
@@ -102,28 +118,10 @@ const fieldsEvent: FieldConfig[] = [
     }),
   },
   {
-    name: "area",
-    label: "Area",
-    type: "select",
-    options: [
-      { value: "pj", label: "PJ" },
-      { value: "sst", label: "SST" },
-      { value: "tcbp", label: "TCBP" },
-      { value: "tcbp_pj", label: "TCBP-PJ" },
-      { value: "tcbp_sst", label: "TCBP-SST" },
-      { value: "pj_sst", label: "PJ-SST" },
-      { value: "tcbp_pj_sst", label: "TCBP-PJ-SST" },
-    ],
-    validate: createValidator({
-      required: "Area is required",
-    }),
-  },
-  {
     name: "ownerTCBP",
     label: "Owner TCBP",
     type: "email",
     validate: createValidator({
-      email: true,
       required: false, // Can be null
     }),
   },
@@ -132,7 +130,6 @@ const fieldsEvent: FieldConfig[] = [
     label: "Owner PJ",
     type: "email",
     validate: createValidator({
-      email: true,
       required: false, // Can be null
     }),
   },
@@ -141,7 +138,6 @@ const fieldsEvent: FieldConfig[] = [
     label: "Owner SST",
     type: "email",
     validate: createValidator({
-      email: true,
       required: false, // Can be null
     }),
   },
