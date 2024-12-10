@@ -29,7 +29,7 @@ function AllEvents() {
           </Link>
           <Button onClick={handleDownload}>Download Events</Button>
         </div>
-        <ul className="w-full">
+        <ul className="w-full p-4">
           {upcomingEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}

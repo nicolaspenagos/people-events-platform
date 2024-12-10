@@ -10,7 +10,7 @@ const StyledLabel: React.FC<LabelProps> = ({ htmlFor = '', children, className }
   return (
     <label
       htmlFor={htmlFor}
-      className={`font-bold text-white ${className || ""}`}
+      className={`font-bold text-black ${className || ""}`}
     >
       {children}
     </label>

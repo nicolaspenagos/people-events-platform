@@ -7,7 +7,7 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
   return (
-    <li className="my-4 bg-white p-6 rounded-lg shadow-lg border border-green-300 hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+    <li className="my-4 bg-white p-6 rounded-lg shadow-lg border border-green-300 hover:shadow-xl transition-shadow duration-300 transform hover:scale-95">
       <div className="flex flex-col md:flex-row md:gap-4">
         {/* Main information */}
         <div className="flex flex-col flex-grow">

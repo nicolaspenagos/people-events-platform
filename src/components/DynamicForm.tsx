@@ -16,7 +16,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ sections, onSubmit }) => {
         <div
           key={sectionIndex}
           className={`flex flex-col gap-4 ${
-            section.background ? "bg-black p-4 rounded-lg" : ""
+            section.background ? "bg-stone-800 p-4 rounded-lg" : ""
           }`}
         >
           {section.title && (

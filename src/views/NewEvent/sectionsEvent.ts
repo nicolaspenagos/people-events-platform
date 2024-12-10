@@ -8,7 +8,7 @@ const sectionsEvent = [
     background: false, // Sin background
   },
   {
-    title: "Datos Generales",
+    title: "General Information",
     columns: 2,
     fields: fieldsEvent.slice(4, 8),
     background: true, // Con background

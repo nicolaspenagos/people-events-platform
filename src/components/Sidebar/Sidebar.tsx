@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
     return (
-        <aside className="h-full w-64  bg-gray-800 text-white flex flex-col items-start  fixed">
+        <aside className="h-full w-64  bg-stone-800 text-white flex flex-col items-start  fixed">
 
             <div className="flex items-center gap-4 mb-6 2- p-3">
                 <img
